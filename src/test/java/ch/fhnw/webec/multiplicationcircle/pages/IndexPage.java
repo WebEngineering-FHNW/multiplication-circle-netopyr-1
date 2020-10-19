@@ -13,6 +13,9 @@ public class IndexPage {
 
     private final WebDriver driver;
 
+    @FindBy(id = "segment-count")
+    private WebElement segmentCount;
+
     @FindBy(id = "multiplier")
     private WebElement multiplier;
 
@@ -29,6 +32,8 @@ public class IndexPage {
     public void fillOutForm(int segmentCountValue, int multiplierValue) {
 
         // TODO: Add code to also set the segmentCount
+        segmentCount.clear();
+        segmentCount.sendKeys(Integer.toString(segmentCountValue));
 
         multiplier.clear();
         multiplier.sendKeys(Integer.toString(multiplierValue));

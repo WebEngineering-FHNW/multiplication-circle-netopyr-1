@@ -27,4 +27,15 @@ class IndexIT {
     }
 
     // TODO: Write a test to ensure that the number of <line>-elements is equal to the provided segment count
+    @Test
+    void segmentCountTenShouldShowTenLines() {
+        // given
+        final IndexPage page = IndexPage.to(driver, port);
+
+        // when
+        page.fillOutForm(10, 2);
+
+        // then
+        assertThat(page.getLineCount()).isEqualTo(10);
+    }
 }

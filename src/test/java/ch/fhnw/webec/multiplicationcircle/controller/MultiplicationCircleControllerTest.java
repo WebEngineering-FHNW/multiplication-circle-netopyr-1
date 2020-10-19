@@ -23,5 +23,16 @@ class MultiplicationCircleControllerTest {
     }
 
     // TODO: Write unit tests to ensure that the controller behaves nicely when called with negative values
+    @Test
+    void testNegativeSegmentCount() {
+        // given
+        final MultiplicationCircleController controller = new MultiplicationCircleController();
+
+        // when
+        final ModelAndView modelAndView = controller.getIndex(-2, 2);
+
+        // then
+        assertThat(modelAndView.getModel()).containsEntry("lines", Collections.emptyList());
+    }
 
 }
